@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <h2>Welcome {{email}}</h2>
+    <form action="/company/admin/upload/" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        Company Name:
+        <input type="text" name="c_name">
+        Input the csv file:
+        <input type="file" name="files">
+
+        
+        <input type="submit">
+    </form>
+
+
+
+
+<script>
+    function upload(event) {
+    event.preventDefault();
+    var data = new FormData($('form').get(0));
+
+    $.ajax({
+        url: $(this).attr('action'),
+        type: $(this).attr('method'),
+        data: data,
+        cache: false,
+        processData: false,
+        contentType: false,
+        success: function(data) {
+            alert('success');
+        }
+    });
+    return false;
+    }
+
+    $(function() {
+        $('form').submit(upload);
+    });
+</script>
+    
+</body>
+</html>

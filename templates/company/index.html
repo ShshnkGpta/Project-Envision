@@ -1,0 +1,465 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="user-scalable=no" />
+    <meta charset="utf-8">
+
+
+    <link rel="icon" href="{%static 'img/favicon.png'%}" type="image/png">
+    <title>Project Envision</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- main css -->
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+
+<body>
+    <style>
+        html, body{
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+    </style>
+
+    <!--================Header Menu Area =================-->
+
+    <nav class="navbar navbar-expand-sm navbar-light bg-light justify-content-center">
+        <div class="container-fluid">
+            <div class="custom-logo">
+            <a class="navbar-brand custom-logo" href="#">
+                <img src="{%static 'img/logo.png'%}" alt="logo" >
+            </a>
+            </div>
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-area">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="nav-item">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="btn btn-outline-primary navbar-btn" href="/login" role="button">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!--================Home Banner Area =================-->
+    <div class="home-banner-area" style="background:url({%static 'img/home-banner.png'%}) no-repeat right center">
+        <div class="container">
+            <div class="row">
+                <div class="banner-text col-lg-6 col-xs-12">
+                    <h1>
+                        PROJECT <br>
+                        ENVISION
+                    </h1>
+                    <p>
+                        a venture by Enactus VIT, is targeted at the upliftment of
+                        visually challenged by training and employing them at a
+                        Business Process Outsourcing unit.
+                    </p>
+                    <a href="#">
+                        <button class="primary_btn" style="background-clip: padding-box, border-box;">
+                            <span>Download Brochure</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-xs-12"></div>
+                <div class="col-lg-4 col-xs-12">
+                    <div class="sha" >
+                        <div class="cont">
+                            <img src="{% static 'img/app.jpg' %}" id="graphic" alt="">
+                            <img src="{% static 'img/app.jpg' %}" id="graphic" alt="">
+                            <img src="{% static 'img/app.jpg' %}" id="graphic" alt="">
+                            <img src="{% static 'img/app.jpg' %}" id="graphic" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--=====================Features====================-->
+    <div id="features">
+        <div class="heading">
+            <h2>Features</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class=" feat col-lg-5 col-xs-12 t1">
+                    <div class="top">
+                        <img src="{% static "img/sales.png" %}" alt="">
+                    </div>
+                    <div class="bottom">
+                        <p>The employees at Envision wiil help you sell your products
+                            or special plans to people by making calls on a daily basis.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-xs-12"></div>
+                <div class="feat col-lg-5 col-xs-12 t2">
+                    <div class="top">
+                        <img src="{% static "img/ad.png" %}" alt="">
+                    </div>
+                    <div class="bottom">
+                        <p>With the help of Envision, you and your company can publicize
+                            and promote any future planned events by inviting people through calls
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" feat col-lg-5 col-xs-12 t3">
+                    <div class="top ">
+                        <img src="{% static "img/comu.png" %}" alt="">
+                    </div>
+                    <div class="bottom">
+                        <p>Testing a product or plan among the common mass by having Envision
+                            employees ask people as to whether or not they would be interested
+                            in trying out the new idea.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-xs-12"></div>
+                <div class="feat col-lg-5 col-xs-12 t4">
+                    <div class="top ">
+                        <img src="{% static "img/promo.png" %}" alt="">
+                    </div>
+                    <div class="bottom">
+                        <p>Promote new offers on products or plans by reaching out to your
+                            customers via telephone marketing and spread the word.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--=====================Portion===================-->
+    <div class="portion" style="background:url({%static 'img/impress-bg.png'%}) no-repeat right center;">
+        <div class="container">
+            <div class="monitor">
+                <div class="row container" style="align-items:center">
+                    <div class="col-lg-6 col-xs-12">
+                        <img src="{%static 'img/stats5.png'%}" style="height:auto;width:80%" alt="monitoring">
+                    </div>
+                    <div class="col-lg-6 col-xs-12">
+                        <div class="heading">
+                            <h3>Monitor in Real-time</h3>
+                        </div>
+                        <div>
+                            <p>The technical team at Enactus VIT, Vellore has designed an app that would
+                                allow the employees to make calls to people, and also provide inputs on how
+                                the call went.<br>
+                                Through real-time monitoring one is able to check the performance and
+                                analyze the reports which makes it easier to generate a feedback and hence
+                                work, adapt and improve accordingly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!--======================Why Us?=====================-->
+            <div class="whyus">
+                <div class="row container" style="align-items:center">
+                    <div class="col-lg-6 col-xs-12">
+                        <div class="heading">
+                            <h3>Why Us?</h3>
+                        </div>
+                        <div>
+                            <p>Project Envision, a venture by Enactus in association with CSRD-RS VIT University,
+                                centred at Vellore, has a motive of training and employing the visually
+                                challenged in a fully functional call centre. The aim of this project is to
+                                ensure that barriers are broken down in the community by proving that there is
+                                no significant gap in the employability skills of visually handicapped people
+                                and everyone else in many fields. Currently, there are multiple projects by
+                                various NGOs that focus on helping physically handicapped people but there is a
+                                major scarcity of initiatives for visually handicapped.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xs-12">
+                        <img src="{%static 'img/logo_text.png'%}" style="height:100%;width:auto;" alt="envision_logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .monitor h2{margin:0 0 0 0;}
+        .whyus p{margin:0 0 80px 0;}
+
+        @media screen and (max-width: 600px){
+            .sha{
+            visibility: hidden;
+            }
+            .monitor img{
+                width:100%;
+                height:auto;
+            }
+            .links{
+                text-align: left;
+            }
+            .social{
+                padding: 5px 0 0 8px;
+            }
+            .funit img{
+                height:auto;
+                width:50%;
+                padding: 5px 0;
+            }
+            .portion p{
+                width: 100%;
+            }
+        }
+    </style>
+
+    <!--=====================Contact======================-->
+    <div id="contact_area">
+        <div class="heading">
+            <h2>Contact us</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="contact_info">
+                        <div class="info_item">
+                            <i class="lnr lnr-home"></i>
+                            <h6>Tamil Nadu, India</h6>
+                            <p>Enactus VIT<br>Vellore Institute of Technology<br>Vellore - 632014</p>
+                        </div>
+                        <div class="info_item">
+                            <i class="lnr lnr-phone-handset"></i>
+                            <h6><a href="#">+91 96292 22594</a></h6>
+                            <p>9am to 9pm</p>
+                        </div>
+                        <div class="info_item">
+                            <i class="lnr lnr-envelope"></i>
+                            <h6><a href="#">enactusvitvellore@gmail.com</a></h6>
+                            <p>Send us your query anytime!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <form class="row contact_form" action="#" method="post" id="contactForm" novalidate="novalidate">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" id="message" rows="6" placeholder="Enter Message"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-right">
+                            <button type="submit" value="submit" class="primary_btn" style="padding:10px; background-clip: padding-box, border-box;">
+                                <span>Send Message</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!--========================Links====================-->
+    <div class="links">
+        <div class="container">
+            <div class="row">
+                <div class="social col-lg-4 col-xs-12">
+                    <img src="{%static 'img/fb.png'%}" style="height:30px;width:auto;" alt="facebook_logo">
+                    <span>@EnactusVIT</span>
+                </div>
+                <div class="social  col-lg-4 col-xs-12">
+                    <img src="{%static 'img/insta.png'%}" style="height:30px;width:auto;" alt="instagram_logo">
+                    <span>@enactus_vit_vellore</span>
+                </div>
+                <div class="social col-lg-4 col-xs-12">
+                    <img src="{%static 'img/web.png'%}" style="height:30px;width:auto;" alt="web_logo">
+                    <span>enactusvitvellore.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--========================Footer====================-->
+    <hr>
+    <div class="footer">
+        <div class="container">
+            <div class="row container" style="align-items:center">
+                <div class="col-lg-3 col-xs-6 funit">
+                    <a href="http://www.vit.ac.in">
+                        <img src="http://www.enactusvitvellore.org/static/assets/vit.jpg" alt="vit_vellore">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-xs-6 funit">
+                    <a href="https://www.enactus.org">
+                        <img id="flogo" src="http://www.enactusvitvellore.org/static/assets/logo.gif" alt="enactus.org">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-xs-6 funit">
+                    <img src="http://www.enactusvitvellore.org/static/assets/csrd.png" alt="csed">
+                </div>
+                <div class="col-lg-3 col-xs-6 funit">
+                    <a href="http://www.enactusvitvellore.org">
+                        <img id="flogo" src="http://www.enactusvitvellore.org/static/assets/enactusvit_logo_new_grey.png" alt="enactus_vit">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<style>
+
+/*========================Contact====================*/
+#contact_area{
+    margin-top:40px;
+}
+
+h2{
+    font-size: 50px;
+}
+
+.monitor h3{
+    margin-top: 80px;
+}
+.contact_info .info_item {
+    position: relative;
+    padding-left: 15px;
+    text-align: left; }
+.contact_info .info_item i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    padding-right:15px;}
+.contact_info .info_item h6 {
+    font-size: 16px;
+    line-height: 24px;
+    color: "Roboto", sans-serif;
+    font-weight: bold;
+    margin-bottom: 0px;
+    color: #222222;
+    margin-left:10px; }
+.contact_info .info_item h6 a {
+      color: #222222; }
+.contact_info .info_item p {
+    font-size: 14px;
+    line-height: 24px;
+    padding: 2px 0px;
+    margin-left:10px ;}
+
+.contact_form .form-group {
+    margin-bottom: 10px; }
+.contact_form .form-group .form-control {
+    font-size: 13px;
+    line-height: 26px;
+    color: #999;
+    border: 1px solid #eeeeee;
+    font-family: "Roboto", sans-serif;
+    border-radius: 0px;
+    padding-left: 20px; }
+.contact_form .form-group .form-control:focus {
+    box-shadow: none;
+    outline: 2px solid #8252fa; }
+.contact_form .form-group .form-control.placeholder {
+    color: #999; }
+.contact_form .form-group .form-control:-moz-placeholder {
+    color: #999; }
+.contact_form .form-group .form-control::-moz-placeholder {
+    color: #999; }
+.contact_form .form-group .form-control::-webkit-input-placeholder {
+    color: #999; }
+.contact_form .form-group textarea {
+    resize: none; }
+.contact_form .form-group textarea.form-control {
+    height: 134px; }
+
+/*================Primary button===================*/
+
+.primary_btn{
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    background-image: linear-gradient(to right, #8252fa 0%, #eca2f1 100%), radial-gradient(circle at top left, #8252fa, #eca2f1);
+    background-image: -webkit-linear-gradient(to right, #8252fa 0%, #eca2f1 100%), -webkit-radial-gradient(circle at top left, #8252fa, #eca2f1);
+    background-image: -moz-linear-gradient(to right, #8252fa 0%, #eca2f1 100%), -moz-radial-gradient(circle at top left, #8252fa, #eca2f1);
+    background-image: -ms-linear-gradient(to right, #8252fa 0%, #eca2f1 100%), -ms-radial-gradient(circle at top left, #8252fa, #eca2f1);
+    background-image: -o-linear-gradient(to right, #8252fa 0%, #eca2f1 100%), -o-radial-gradient(circle at top left, #8252fa, #eca2f1);
+    color: #fff;
+    border: 2px solid transparent;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
+.primary_btn:hover{
+    border: double 2px transparent;
+    border-radius: 5px;
+    background-image: linear-gradient(white, white), radial-gradient(circle at top left, #8252fa, #eca2f1);
+    background-image: -webkit-linear-gradient(white, white), -webkit-radial-gradient(circle at top left, #8252fa, #eca2f1);
+    background-image: -moz-linear-gradient(white, white), -moz-radial-gradient(circle at top left, #8252fa, #eca2f1);
+    background-image: -ms-linear-gradient(white, white), -ms-radial-gradient(circle at top left, #8252fa, #eca2f1);
+    background-image: -o-linear-gradient(white, white), -o-radial-gradient(circle at top left, #8252fa, #eca2f1);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    color: #222222;
+}
+
+/*================Footer===================*/
+.footer{
+    height: 200px;
+    margin: 5px;
+}
+.footer img{
+    width: 250px;
+    padding: 0 20px;
+}
+.funit{
+    height:100%;
+    width: auto;
+}
+#flogo{
+    width: 200px;
+}
+
+</style>
+
+</html>

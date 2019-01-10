@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="#" type="image/png">
+        <!--Google Charts JS-->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>Welcome to Envision</title>
+
+        <script>
+            //Pie Chart//
+            google.charts.load('current', {'packages': ['corechart']});
+
+            google.charts.setOnLoadCallback(drawPieChart);
+            google.charts.setOnLoadCallback(drawAreaChart);
+            google.charts.setOnLoadCallback(drawBarGraph);
+        
+            function drawPieChart() {
+                var data = google.visualization.arrayToDataTable([
+                ['Response', 'Responses'],
+                ['Positve', {{t_pos}}],
+                ['Negative', {{t_neg}}]
+                ]);
+        
+                var options = {
+                title: 'All-time responses'
+                };
+        
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        
+                chart.draw(data, options);
+            }
+
+            function drawAreaChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Day', 'Positive', 'Negative'],
+                    {% for k, v in d_neg.items %}
+                        ['{{ k }}', {{ v.0 }}, {{ v.1 }}],
+                    {% endfor %}
+                ]);
+        
+                var options = {
+                    title: 'Calls per Day',
+                    hAxis: {title: 'Day',  titleTextStyle: {color: '#333'}},
+                    vAxis: {minValue: 0}
+                };
+        
+                var chart = new google.visualization.AreaChart(document.getElementById('areachart'));
+                chart.draw(data, options);
+            }
+
+            function drawBarGraph() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Date', 'Calls'],
+                    {% for k, v in d_num.items %}
+                        ['{{ k }}', {{ v }}],
+                    {% endfor %}
+                ]);
+    
+                var options = {title: 'Number of Calls per Day'};
+    
+                var chart = new google.visualization.ColumnChart(document.getElementById('bargraph'));
+                chart.draw(data, options);
+        }
+        </script>
+    </head>
+    <body>
+        <div>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">
+                            <img src="{%static 'img/logo.png'%}" alt="logo" style="height:40px">
+                        </a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/welcome">Statistics</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><p class="navbar-text">Welcome {{c}}</p></li>
+                        <li><a href="{% url 'log' %}"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div>
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#pie">Responses</a></li>
+                <li><a data-toggle="tab" href="#area">Response/Day</a></li>
+                <li><a data-toggle="tab" href="#bar">Calls/Day</a></li>
+                <li><a data-toggle="tab" href="#logs">Call Log</a></li>
+            </ul>
+        </div>
+
+        <div class="tab-content">
+            <div id="pie" class="tab-pane fade in active">
+                <div class="container-fluid">
+                    <div id="piechart" style="width: 900px; height: 500px;"></div>
+                </div>
+            </div>
+            <div id="area" class="tab-pane fade">
+                <div class="container-fluid">
+                    <div id="areachart" style="width: 900px; height: 500px;"></div>
+                </div>
+            </div>
+            <div id="bar" class="tab-pane fade">
+                <div class="container-fluid">
+                    <div id="bargraph" style="width: 1350px; height: 750px;"></div>
+                </div>
+            </div>
+            <div id="logs" class="tab-pane fade">
+                <div class="container">
+                    <table class="table table-bordered table-striped">
+                        <tr>
+                            <th>Date</th>
+                            <th>Phone</th>
+                            <th>Duration</th>
+                            <th>Name</th>
+                            <th>Response</th>
+                            <th>Time</th>
+                        </tr>
+                        {% for date, ph in calls.items %}
+                            {% for phn, val in ph.items %}
+                            <tr>
+                                <td>{{ date }}</td>
+                                <td>{{ phn }}</td>
+                                <td>{{ val.duration }}</td>
+                                <td>{{ val.name }}</td>
+                                <td>{{ val.response }}</td>
+                                <td>{{ val.time }}</td>
+                            </tr>
+                            {% endfor %}
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
